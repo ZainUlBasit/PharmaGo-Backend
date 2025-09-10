@@ -40,6 +40,7 @@ const corsOptions = {
       "https://admin-pharma-go.vercel.app",
       "https://pharma-go-frontend.vercel.app",
       "https://pharmago.com.pk",
+      "https://www.pharmago.com.pk",
     ];
     
     // Allow requests with no origin (like mobile apps or curl requests)
