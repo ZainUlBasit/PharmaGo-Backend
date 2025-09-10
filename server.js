@@ -97,6 +97,7 @@ app.get("/", (req, res) => {
 });
 
 
+
 app.use("/api/auth", AuthRoutes);
 app.use("/api/cities", CitiesRoutes);
 app.use("/api/customer", CustomerRoutes);
