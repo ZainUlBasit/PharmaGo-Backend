@@ -39,7 +39,7 @@ const corsOptions = {
       "http://localhost:5178",
       "https://admin-pharma-go.vercel.app",
       "https://pharma-go-frontend.vercel.app",
-      "http://pharmago.com.pk",
+      "https://pharmago.com.pk",
     ];
     
     // Allow requests with no origin (like mobile apps or curl requests)
