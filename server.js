@@ -38,6 +38,7 @@ const corsOptions = {
       "http://localhost:5177",
       "http://localhost:5178",
       "https://admin-pharma-go.vercel.app",
+      "https://pharma-go-frontend.vercel.app",
       "http://pharmago.com.pk",
     ];
     
