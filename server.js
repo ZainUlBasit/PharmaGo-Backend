@@ -92,6 +92,11 @@ const ProductRoutes = require("./routes/product.routes");
 const StatsRoutes = require("./routes/stats.routes");
 const TopSellingRoutes = require("./routes/topSelling.routes");
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is working properly" });
+});
+
+
 app.use("/api/auth", AuthRoutes);
 app.use("/api/cities", CitiesRoutes);
 app.use("/api/customer", CustomerRoutes);
