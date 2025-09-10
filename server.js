@@ -28,21 +28,38 @@ app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:5174",
-    "http://localhost:5175",
-    "http://localhost:5173",
-    "http://localhost:5176",
-    "http://localhost:5177",
-    "http://localhost:5178",
-    "https://admin-pharma-go.vercel.app",
-    "http://pharmago.com.pk",
-  ],
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "http://localhost:5174",
+      "http://localhost:5175",
+      "http://localhost:5173",
+      "http://localhost:5176",
+      "http://localhost:5177",
+      "http://localhost:5178",
+      "https://admin-pharma-go.vercel.app",
+      "http://pharmago.com.pk",
+    ];
+    
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+
+// Handle preflight requests for all routes
+app.options('*', cors(corsOptions));
 
 // Middleware to log headers and body
 // app.use((req, res, next) => {
