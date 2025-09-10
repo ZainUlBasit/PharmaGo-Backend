@@ -38,6 +38,8 @@ const corsOptions = {
     "http://localhost:5178",
     "https://www.gamepointstore.pk",
     "https://gamepointstore-frontend.vercel.app",
+    "https://admin-pharma-go.vercel.app",
+    "http://pharmago.com.pk",
   ],
   credentials: true,
 };
